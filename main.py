@@ -6,19 +6,24 @@ def introducir_num():
   while intento<0 or intento>100:
     intento = int(input("Escriba un numero\n"))
   return intento
-  
-def adivinar_numero(intento):
+
+def adivinar_numero():
+  l_sup=100
+  l_inf=0
+  i=0
   while True:
-    introducir_num()
-    if intento==numero:
-      print("Ha acertado el numero\n")
+    i+=1
+    x=introducir_num()
+    if x==numero:
+      print("Ha acertado el numero con {} intentos\n".format(i))
       break
-    elif intento>numero:
-      print("El numero es menor\n")
+    elif x>numero:
+      l_sup=x
+      print("Rango de valores ({}, {})\n".format(l_inf,l_sup))
     else:
-      print("El numero es mayor\n")
-
-
+      l_inf=x
+      print("Rango de valores ({}, {})\n".format(l_inf, l_sup))
+adivinar_numero()
 
 
   
