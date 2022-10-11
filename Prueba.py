@@ -8,8 +8,7 @@ def introducir_num():
   except:
     pass
   else:
-    if 0<=intento<=100:
-     return intento
+    return intento
   sys.exit()
 
 def adivinar_numero():

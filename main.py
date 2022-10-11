@@ -4,7 +4,7 @@ numero=random.randint(0,100)
 def introducir_num():
   intento = int(input("Escriba un numero\n"))
   while intento<0 or intento>100:
-    intento = int(input("Escriba un numero\n"))
+    intento = int(input("Escriba otro numero\n"))
   return intento
 
 def adivinar_numero():
