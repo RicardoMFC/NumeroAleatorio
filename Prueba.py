@@ -8,6 +8,7 @@ def introducir_num():
   except:
     pass
   else:
+    if 0<=intento<=100:
      return intento
   sys.exit()
 
