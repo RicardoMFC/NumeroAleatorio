@@ -5,6 +5,8 @@ import sys
 def introducir_num():
   try:
     intento = int(input("Escriba un numero\n"))
+    while intento<0 or intento>100:
+      intento = int(input("Escriba otro numero\n"))
   except:
     pass
   else:
@@ -12,9 +14,20 @@ def introducir_num():
   sys.exit()
 
 def adivinar_numero():
-  l_sup=100
-  l_inf=0
-  i=0
+    l_sup = indicar_lim_sup()
+    l_inf = indicar_lim_inf()
+  try:
+    l_sup = indicar_lim_sup()
+    l_inf = indicar_lim_inf()
+    z=comparacion_limites(l_inf,l_sup)
+
+    while z!=1:
+      l_sup = indicar_lim_sup()
+      l_inf = indicar_lim_inf()
+      z=comparacion_limites(l_inf,l_sup)
+  except:
+    pass
+    
   while True:
     i+=1
     x=introducir_num()
@@ -29,6 +42,24 @@ def adivinar_numero():
       print("Rango de valores ({}, {})\n".format(l_inf, l_sup))
 adivinar_numero()
 
+def indicar_lim_inf():
+  try:
+    limite_inferior= int (innput("Escriba el limite inferior\n"))
+  except:
+    pass
+  else:
+    return limite_inferior
 
+def indicar_lim_sup():
+    try:
+    limite_superior= int (innput("Escriba el limite inferior\n"))
+  except:
+    pass
+  else:
+    return limite_superior
   
-  
+def comparacion_limites(x,y):
+  val=0
+  if x<y:
+    val=1
+  return val

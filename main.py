@@ -24,9 +24,3 @@ def adivinar_numero():
       l_inf=x
       print("Rango de valores ({}, {})\n".format(l_inf, l_sup))
 adivinar_numero()
-
-
-  
-
-
-  
