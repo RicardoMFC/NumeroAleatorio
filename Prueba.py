@@ -14,14 +14,11 @@ def introducir_num():
   sys.exit()
 
 def adivinar_numero():
-    l_sup = indicar_lim_sup()
-    l_inf = indicar_lim_inf()
+  l_sup = indicar_lim_sup()
+  l_inf = indicar_lim_inf()
   try:
-    l_sup = indicar_lim_sup()
-    l_inf = indicar_lim_inf()
     z=comparacion_limites(l_inf,l_sup)
-
-    while z!=1:
+    while z==0:
       l_sup = indicar_lim_sup()
       l_inf = indicar_lim_inf()
       z=comparacion_limites(l_inf,l_sup)
@@ -40,7 +37,7 @@ def adivinar_numero():
     else:
       l_inf=x
       print("Rango de valores ({}, {})\n".format(l_inf, l_sup))
-adivinar_numero()
+
 
 def indicar_lim_inf():
   try:
@@ -51,7 +48,7 @@ def indicar_lim_inf():
     return limite_inferior
 
 def indicar_lim_sup():
-    try:
+  try:
     limite_superior= int (innput("Escriba el limite inferior\n"))
   except:
     pass
