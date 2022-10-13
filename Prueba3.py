@@ -3,9 +3,9 @@ import sys
 
 def indicarLimites():
   while True:
-    limite_inferior= int (input("Escriba el limite inferior\n"))
-    limite_superior= int (input("Escriba el limite superior\n"))
-    if limite_inferior<limite_superior:
+    limite_inferior = int (input("Escriba el limite inferior\n"))
+    limite_superior = int (input("Escriba el limite superior\n"))
+    if limite_inferior < limite_superior:
       return limite_inferior, limite_superior
 
 def introducir_num(a,b):
