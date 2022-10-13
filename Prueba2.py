@@ -20,7 +20,6 @@ def introducir_num(a,b):
   sys.exit()
 
 def adivinar_numero(t, numero, l_inf, l_sup):
-  
   val=0
   if t==numero:
     val=1
