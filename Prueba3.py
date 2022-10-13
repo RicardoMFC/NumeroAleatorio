@@ -36,6 +36,6 @@ def adivinar_numero(numero, l_inf, l_sup):
 def main():
     l_inf, l_sup = indicarLimites()
     numero=random.randint(l_inf,l_sup)
-    y = adivinar_numero(numero, l_inf, l_sup)
-    print("Ha acertado con {} intentos\n".format(y))
+    nºintentos = adivinar_numero(numero, l_inf, l_sup)
+    print("Ha acertado con {} intentos\n".format(nºintentos))
 main()
