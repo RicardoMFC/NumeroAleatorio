@@ -21,10 +21,14 @@ def indicar_dificultad():
     return limite_inferior, limite_superior, dificultad
 
 def ayuda():
-    valor_ayuda = int (input ("Indicar con un 1 si quiere ayuda de rangos, sino escriba un 0\n"))
-    while (valor_ayuda!=0 and valor_ayuda!=1):
-        valor_ayuda = int( input ("Error. Indicar con un 1 si quiere ayuda de rangos, sino escriba un 0\n"))
-    return valor_ayuda
+    try:
+        valor_ayuda = int (input ("Indicar con un 1 si quiere ayuda de rangos, sino escriba un 0\n"))
+        while (valor_ayuda!=0 and valor_ayuda!=1):
+            valor_ayuda = int( input ("Error. Indicar con un 1 si quiere ayuda de rangos, sino escriba un 0\n"))
+    except:
+        pass
+    else:
+        return valor_ayuda
 
 def numero_maximo_intentos(dificultad):
     #x son el numero de intentos permitidos
@@ -68,13 +72,10 @@ def adivinar_numero(numero, l_inf, l_sup, valor_ayuda, intentos_permitidos):
                 l_inf=intento+1
             
             if valor_ayuda==1:
-                    ayuda_rangos(l_inf, l_sup)
+                print("Rango de valores [{}, {}]\n".format(l_inf,l_sup))
                 
         if contador_intentos==intentos_permitidos:
             return 0
-
-def ayuda_rangos (l_inf, l_sup):
-    print("Rango de valores [{}, {}]\n".format(l_inf,l_sup))
 
 def jugar():
 
