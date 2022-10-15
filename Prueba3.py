@@ -79,9 +79,9 @@ def usuario ():
     while valor !=1 and valor!=1:
       valor = int (input("Escriba un 1 si quiere usar la IA, si quiere jugar usted escriba un 0"))
     if usuario==0:
-      from persona import introducir_num
+      import introducir_num from persona 
     else:
-      from IA import IA
+      from IA import IA()
     
   except:
     pass
