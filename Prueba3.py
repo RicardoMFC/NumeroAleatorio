@@ -1,6 +1,9 @@
 import random
 import sys
 
+from main import introducir_num
+
+
 def indicar_dificultad():
     limite_inferior=0
     try:
@@ -42,16 +45,16 @@ def numero_maximo_intentos(dificultad):
         intentos=1000
     return intentos
     
-def IA(l_inf,l_sup):
-    intento = int ((l_sup+l_inf)/2)
-    print(intento)
-    return intento
+
 
 def adivinar_numero(numero, l_inf, l_sup, valor_ayuda, intentos_permitidos):
     contador_intentos=0
     while True:
         contador_intentos+=1
-        intento=IA(l_inf, l_sup)
+        if usuario==1:
+          intento=IA(l_inf, l_sup)
+        else:
+          intento=introducir_num(l_inf, l_sup)
 
         if intento==numero:
             return contador_intentos
@@ -70,13 +73,29 @@ def adivinar_numero(numero, l_inf, l_sup, valor_ayuda, intentos_permitidos):
         if contador_intentos==intentos_permitidos:
             return 0
 
+def usuario ():
+  try:
+    valor = int (input("Escriba un 1 si quiere usar la IA, si quiere jugar usted escriba un 0"))
+    while valor !=1 and valor!=1:
+      valor = int (input("Escriba un 1 si quiere usar la IA, si quiere jugar usted escriba un 0"))
+    if usuario==0:
+      from persona import introducir_num
+    else:
+      from IA import IA
+    
+  except:
+    pass
+  else:
+    return valor
+
 def jugar():
 
     l_inf, l_sup, dificultad = indicar_dificultad()  
     numero=random.randint(l_inf, l_sup)
     valor_ayuda = ayuda()
     intentos_permitidos = numero_maximo_intentos(dificultad)
-    nºintentos = adivinar_numero (numero, l_inf, l_sup, valor_ayuda, intentos_permitidos)
+    usuario = usuario()
+    nºintentos = adivinar_numero (numero, l_inf, l_sup, valor_ayuda, intentos_permitidos, usuario)
 
     if nºintentos==0:
         print ("Ha utilizado el número máximo de oportunidades\n")
