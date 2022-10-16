@@ -60,4 +60,4 @@ def introducir_num(l_inf,l_sup):
     pass
   else:
     return intento
-  sys.exit()
+
