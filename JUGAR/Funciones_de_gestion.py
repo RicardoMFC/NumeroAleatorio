@@ -1,6 +1,5 @@
 from Funciones_de_entrada import *
 import random
-import sys
 
 
 def numero_maximo_intentos(dificultad):
