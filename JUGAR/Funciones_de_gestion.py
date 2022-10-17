@@ -46,8 +46,8 @@ def adivinar_numero(numero, l_inf, l_sup, valor_ayuda, intentos_permitidos, usua
 def jugar():
     contador=0
     while True:
-        valor = desea_jugar()
-        if valor==0:
+        valor_si_no = desea_jugar()
+        if valor_si_no==0:
             break
 
         l_inf, l_sup, dificultad = indicar_dificultad()  
@@ -61,10 +61,11 @@ def jugar():
             print ("Ha utilizado el número máximo de oportunidades\n")
         else:
             print ("Ha acertado con {} intentos\n".format(nºintentos))
-        contador+=1  
+        contador+=1
     if contador==1:
         print ("Ha jugado {} vez\n".format(contador))
     else:
         print ("Ha jugado {} veces\n".format(contador))
+    
 
 

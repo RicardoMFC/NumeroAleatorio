@@ -1,5 +1,5 @@
 def desea_jugar():
-    valor=0
+    valor=0 #Supongo que no va a introducir si, si introduce si cambio el valor a 1.
     palabra=input("Si quiere jugar escriba si, sino quiere escriba cualquier cosa\n")
     palabra=palabra.lower()
     if palabra=='si':
@@ -11,7 +11,6 @@ def fun_usuario ():
     valor = int (input("Escriba un 1 si quiere usar la IA, si quiere jugar usted escriba un 0\n"))
     while valor!=0 and valor!=1:
       valor = int (input("Escriba un 1 si quiere usar la IA, si quiere jugar usted escriba un 0\n"))
-
   except:
     pass
   else:
